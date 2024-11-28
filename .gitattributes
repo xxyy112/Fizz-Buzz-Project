@@ -1,2 +1,43 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# FizzBuzz Project
+# Prints numbers from 1 to N following the FizzBuzz rules.
+
+def fizzbuzz(n):
+    """
+    Function to implement the FizzBuzz logic.
+    - Prints "Fizz" for multiples of 3.
+    - Prints "Buzz" for multiples of 5.
+    - Prints "FizzBuzz" for multiples of both 3 and 5.
+    - Otherwise, prints the number itself.
+    
+    Parameters:
+    n (int): The maximum number to process.
+    """
+    for i in range(1, n + 1):  # Loop through numbers 1 to n
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i)
+
+def main():
+    """
+    Main function to run the FizzBuzz program.
+    """
+    print("Welcome to the FizzBuzz Project!")
+    try:
+        # Ask the user for the maximum number
+        n = int(input("Enter a positive integer (N): "))
+        if n <= 0:
+            print("Please enter a positive integer.")
+        else:
+            print("\nHere is the FizzBuzz sequence up to", n, ":\n")
+            fizzbuzz(n)
+    except ValueError:
+        print("Invalid input! Please enter a valid positive integer.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
